@@ -3,32 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello Vasanta</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            font-family: sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
-        }
-        h1 {
-            font-size: 3em;
-            color: #4A90E2; /* A pleasant blue */
-            text-align: center;
-        }
-    </style>
+    <title>Pac-Man</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const heading = document.createElement('h1');
-            heading.textContent = 'Hello World From Vasanta!';
-            document.body.appendChild(heading);
-        });
-    </script>
+    <div class="game-container">
+        <div class="ui-top">
+            <div class="score-container">Score: <span id="score">0</span></div>
+            <div class="level-container">Level: <span id="level">1</span></div>
+            <div class="high-score-container">High Score: <span id="high-score">0</span></div>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+        <div class="ui-bottom">
+            <div class="lives-container">Lives: <span id="lives">3</span></div>
+        </div>
+    </div>
+
+    <div id="startScreen" class="overlay">
+        <div class="overlay-content">
+            <h1>Pac-Man</h1>
+            <button id="startGameButton">Start Game</button>
+        </div>
+    </div>
+
+    <div id="gameOverScreen" class="overlay" style="display: none;">
+        <div class="overlay-content">
+            <h2>Game Over</h2>
+            <p>Final Score: <span id="finalScore">0</span></p>
+            <button id="playAgainButton">Play Again</button>
+        </div>
+    </div>
+
+    <div id="levelCompleteScreen" class="overlay" style="display: none;">
+        <div class="overlay-content">
+            <h2>Level Complete!</h2>
+        </div>
+    </div>
+
+    <div id="winScreen" class="overlay" style="display: none;">
+        <div class="overlay-content">
+            <h2>You Win!</h2>
+            <p>Congratulations!</p>
+            <button id="playAgainWinButton">Play Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
