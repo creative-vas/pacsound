@@ -252,8 +252,11 @@ function pacManLosesLife() { /* ... (same as before) ... */
 
 // --- Event Listeners ---
 startGameButton.addEventListener('click', () => {
-    startScreen.style.display = 'none'; fullGameReset();
-    gameRunning = true; console.log("Game Started!");
+    console.log("startGameButton clicked. Hiding startScreen.");
+    startScreen.style.display = 'none';
+    fullGameReset();
+    gameRunning = true;
+    console.log("Game variables reset and gameRunning set to true. Requesting gameLoop.");
     requestAnimationFrame(gameLoop);
 });
 playAgainButton.addEventListener('click', () => {
